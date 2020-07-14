@@ -1,0 +1,14 @@
+﻿extends partials/header
+block content
+   if (user)
+    h1 List of users
+    table
+        tr
+            th User ID
+            each num in userID
+                td= num
+        tr
+            th Username
+            each name in userName
+                td= name
+   include partials/footer

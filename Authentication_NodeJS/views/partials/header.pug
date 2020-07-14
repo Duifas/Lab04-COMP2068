@@ -1,0 +1,18 @@
+﻿doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body
+    nav
+        if (!user)
+            a(href='/login') Login 
+            |  | 
+            a(href='/register') Register
+        else
+            a(href='/logout') Logout
+            |  | 
+            a(href='/') Home
+            |  | 
+            a(href='/users') List of Users
+    block content
