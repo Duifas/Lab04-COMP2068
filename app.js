@@ -10,10 +10,10 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
-const MongoClient = require('mongodb').MongoClient;
 const MongoStore = require('connect-mongo')(session);
 
-
+//Addition of Mongo client for connection of database
+const MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 const uri = "mongodb+srv://admin:Thalesfv00@cluster0-vqo7y.mongodb.net/user?retryWrites=true&w=majority";
 try {    mongoose.connect(uri, { useNewUrlParser: true });    var db = mongoose.connection;    db.on('error', function (err) {        console.log(err);    });    db.once('open', function (callback) {        console.log('Connected to MongoDB');    });} catch (err) {    console.log("Error : " + err);}
